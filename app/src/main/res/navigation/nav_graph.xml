@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/emptyStateFragment"
+        android:name="com.codebrew.cryptodemoapp.presentation.screens.empty_state_detail.EmptyStateFragment"
+        android:label="fragment_empty_state"
+        tools:layout="@layout/fragment_empty_state" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.codebrew.cryptodemoapp.presentation.screens.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_valueStateFragment"
+            app:destination="@id/valueStateFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_emptyStateFragment"
+            app:destination="@id/emptyStateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/valueStateFragment"
+        android:name="com.codebrew.cryptodemoapp.presentation.screens.value_state_detail.ValueStateFragment"
+        android:label="fragment_value_state"
+        tools:layout="@layout/fragment_value_state" />
+</navigation>
